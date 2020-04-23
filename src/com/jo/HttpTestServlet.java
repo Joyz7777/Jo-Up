@@ -18,6 +18,8 @@ public class HttpTestServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String paramVal = this.config.getInitParameter("charset");//获取指定的初始化参数
         resp.getWriter().print(paramVal);
+
+
     }
 
     @Override

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+        <script>
+            var obj = {};
+
+            var obj2 = {
+                name: 'aa',
+                age: 18
+
+            }
+
+            var obj3 = {
+
+                name: 'ccc',
+                age: 18,
+                school: {
+                    a: "一小",
+                    b: "2中",
+                    c: "3中"
+
+                }
+            }
+
+            var obj4 = {
+
+                name: 'abc',
+                "for": "jason"
+
+            }
+
+            console.log(obj4.for)
+            console.log(obj4["for"])
+            obj4.for = "aj"
+            console.log(obj4.for)
+            obj3.school.c = "人大"
+
+            console.log(obj3.school.c)
+            console.log(obj)
+            console.log(obj2)
+
+
+
+
+
+        </script>
+</body>
+</html>
