@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+
+    <script>
+
+        function sum() {
+            var result = 0;
+            for (var i of arguments){
+                result += i;
+            }
+            console.log(result)
+        }
+
+        function sum2(x,y) {
+            var result = x+ y;
+
+            console.log(result)
+        }
+        sum(2,3,45,5634)
+        sum2(2,3,45,5634)
+
+    </script>
+
+
+
+    <script>
+        
+        function personFullName() {
+            return this.first + ' ' + this.last;
+        }
+        function  Person(first,last) {
+            this.first = first;
+            this.last = last;
+            this.fullName = personFullName;
+        }
+
+
+        var person = new Person("aaaa","bbnbbb");
+        console.log(person.fullName())
+
+        Person.prototype.nameUpperCase = function () {
+            return this.fullName().toUpperCase();
+        }
+
+        var nameUpperCase = person.nameUpperCase();
+        console.log(nameUpperCase)
+
+
+
+        String.prototype.reversed = function () {
+            var r = "";
+            for (var i = this.length - 1; i >= 0; i--) {
+                r += this[i];
+            }
+            return r;
+        }
+
+        // var  s = "Jason";
+        // console.log(s.reversed());
+        //
+        // "This can now be reversed".reversed(); // desrever eb won nac sihT
+
+        var s = new Person("Simon", "Willison");
+
+        Person.prototype.toString = function() {
+            return '<Person: ' + this.fullName() + '>';
+        }
+        s.toString(); // <Person: Simon Willison>
+
+
+
+
+        function trivialNew(constructor, ...args) {
+            var o = {}; // 创建一个对象
+            constructor.apply(o, args);
+            return o;
+        }
+
+        var p = trivialNew(Person,"Jason","zhou");
+
+        console.log(p.first)
+
+
+        function lastNameCaps() {
+            return this.last.toUpperCase();
+        }
+
+        // p.lastNameCaps = lastNameCaps;
+        // console.log(p.lastNameCaps());
+        //
+
+        console.log(lastNameCaps.call(p));
+
+    </script>
+</body>
+</html>
