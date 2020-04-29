@@ -37,4 +37,26 @@
         <servlet-name>HttpTestServlet</servlet-name>
         <url-pattern>/http</url-pattern>
     </servlet-mapping>
+    
+    
+    
+    <servlet>
+        <servlet-name>Step1Servlet</servlet-name>
+        <servlet-class>com.jo.book.Step1Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Step1Servlet</servlet-name>
+        <url-pattern>/book/step1</url-pattern>
+    </servlet-mapping>
+
+
+
+    <servlet>
+        <servlet-name>Step2Servlet</servlet-name>
+        <servlet-class>com.jo.book.Step2Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Step2Servlet</servlet-name>
+        <url-pattern>/book/step2</url-pattern>
+    </servlet-mapping>
 </web-app>
